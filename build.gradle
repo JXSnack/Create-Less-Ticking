@@ -22,6 +22,7 @@ subprojects {
         maven { url = "https://maven.blamejared.com/" } // JEI
         maven { url = "https://maven.parchmentmc.org" } // Parchment mappings
         maven { url = "https://maven.quiltmc.org/repository/release" } // Quilt Mappings
+        maven { url = "https://artifacts.snackbag.net/artifactory/shitlib/"} // ShitLib
         maven { // Flywheel
             url = "https://maven.tterrag.com/"
             content {
@@ -41,6 +42,10 @@ subprojects {
         })
 
         // see each subproject for dependencies.
+
+        // ShitLib
+        implementation "net.snackbag.shit:shit:${shitlib_version}"
+        include "net.snackbag.shit:shit:${shitlib_version}"
     }
 
     build.finalizedBy(mergeJars)
