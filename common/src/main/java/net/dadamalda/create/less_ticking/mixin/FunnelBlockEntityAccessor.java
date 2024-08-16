@@ -5,7 +5,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Accessor;
 
 @Mixin(value = FunnelBlockEntity.class, remap = false)
-public interface MixinFunnel {
+public interface FunnelBlockEntityAccessor {
     @Accessor("extractionCooldown")
     void setExtractionCooldown(int value);
 

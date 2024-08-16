@@ -4,9 +4,9 @@
   "package": "net.dadamalda.create.less_ticking.mixin",
   "compatibilityLevel": "JAVA_17",
   "server": [
-    "MixinFunnel",
-    "MixinFunnelImpl",
-    "MixinChuteImpl"
+      "FunnelBlockEntityAccessor",
+    "FunnelBlockEntityMixin",
+    "ChuteBlockEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
