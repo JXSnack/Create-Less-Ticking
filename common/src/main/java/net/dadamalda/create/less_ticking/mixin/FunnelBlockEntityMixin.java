@@ -11,9 +11,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class FunnelBlockEntityMixin {
     @Unique
     private int tickSlowdown = 3;
-    
+
     @Unique
-    private int tickCounter = 0;
+    private int create_less_ticking$tickCounter = 0;
 
     @Inject(
             method = "tick",
@@ -21,8 +21,8 @@ public abstract class FunnelBlockEntityMixin {
             cancellable = true
     )
     public void tick(CallbackInfo ci) {
-        tickCounter++;
-        if (tickCounter % tickSlowdown != 0) {
+        create_less_ticking$tickCounter++;
+        if (create_less_ticking$tickCounter % tickSlowdown != 0) {
             ((FunnelBlockEntityAccessor) this).setExtractionCooldown(((FunnelBlockEntityAccessor) this).getExtractionCooldown()-1);
             ci.cancel();
         }
