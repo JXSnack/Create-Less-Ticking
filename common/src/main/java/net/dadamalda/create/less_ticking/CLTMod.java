@@ -9,6 +9,7 @@ public class CLTMod {
     public static final String MOD_ID = "create_lt";
     public static final String NAME = "Create: Less Ticking";
     public static final Logger LOGGER = LoggerFactory.getLogger(NAME);
+    public static CLTConfig config;
 
 
     public static void init() {
