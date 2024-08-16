@@ -22,9 +22,4 @@ public class CLTModForge {
     public void onCommandSetup(FMLCommonSetupEvent event) {
         CLTMod.config = new CLTConfig(FMLPaths.CONFIGDIR.get().toAbsolutePath() + "/create_less_ticks.json");
     }
-
-    @SubscribeEvent
-    public void onCommandRegister(RegisterCommandsEvent event) {
-        CLTMod.registerCommands(event.getDispatcher(), event.getBuildContext(), event.getCommandSelection());
-    }
 }
