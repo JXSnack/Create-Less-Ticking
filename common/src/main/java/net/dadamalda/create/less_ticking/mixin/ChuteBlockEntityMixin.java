@@ -13,7 +13,7 @@ public abstract class ChuteBlockEntityMixin {
     private int tickSlowdown = 3;
     
     @Unique
-    private int tickCounter = 0;
+    private int create_less_ticking$tickCounter = 0;
 
     @Inject(
             method = "tick",
@@ -21,8 +21,8 @@ public abstract class ChuteBlockEntityMixin {
             cancellable = true
     )
     public void tick(CallbackInfo ci) {
-        tickCounter++;
-        if (tickCounter % tickSlowdown != 0) {
+        create_less_ticking$tickCounter++;
+        if (create_less_ticking$tickCounter % tickSlowdown != 0) {
             ci.cancel();
         }
     }
